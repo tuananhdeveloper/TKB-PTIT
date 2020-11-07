@@ -40,6 +40,8 @@ public class StaticWeb extends HttpServlet {
 		if(request.getContextPath().equals("/index.html") || request.getContextPath().equals("/")) {
 			OutputStreamWriter osw = new OutputStreamWriter(out);
 			osw.write("haha");
+			osw.close();
+			out.close();
 		}
 	}
 
