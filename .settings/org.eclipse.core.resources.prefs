@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-encoding//WebContent/WEB-INF/index.html=UTF-8
+encoding//WebContent/index.html=UTF-8
 encoding//src/com/tuananh/ICSExporter.java=UTF-8
 encoding//src/servlet/MyServlet.java=UTF-8
 encoding//src/utils/Converter.java=UTF-8
