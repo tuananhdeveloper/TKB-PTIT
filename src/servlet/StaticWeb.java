@@ -1,13 +1,19 @@
 package servlet;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
+import javax.net.ssl.SSLEngineResult.Status;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.io.IOUtils;
 
 /**
  * Servlet implementation class StaticWeb
@@ -29,8 +35,14 @@ public class StaticWeb extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher view = request.getRequestDispatcher("/static/index.html");
-		view.forward(request, response);
+		OutputStream out = response.getOutputStream();
+		if(request.getContextPath().equals("/index.html") || request.getContextPath().equals("/")) {
+			FileInputStream fs = new FileInputStream("/static/index.html");
+			response.setContentType("text/html");
+			response.setStatus(HttpServletResponse.SC_OK);
+			IOUtils.copy(fs, out);
+			out.close();
+		}
 	}
 
 	/**
