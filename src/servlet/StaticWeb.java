@@ -37,12 +37,16 @@ public class StaticWeb extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		OutputStream out = response.getOutputStream();
-		if(request.getContextPath().equals("/index.html") || request.getContextPath().equals("/")) {
-			OutputStreamWriter osw = new OutputStreamWriter(out);
-			osw.write("haha");
-			osw.close();
-			out.close();
-		}
+		OutputStreamWriter osw = new OutputStreamWriter(out);
+		osw.write("haha");
+		osw.close();
+		out.close();
+//		if(request.getContextPath().equals("/index.html") || request.getContextPath().equals("/")) {
+//			OutputStreamWriter osw = new OutputStreamWriter(out);
+//			osw.write("haha");
+//			osw.close();
+//			out.close();
+//		}
 	}
 
 	/**
