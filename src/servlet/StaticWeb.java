@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 
 import javax.net.ssl.SSLEngineResult.Status;
 import javax.servlet.RequestDispatcher;
@@ -37,11 +38,8 @@ public class StaticWeb extends HttpServlet {
 		// TODO Auto-generated method stub
 		OutputStream out = response.getOutputStream();
 		if(request.getContextPath().equals("/index.html") || request.getContextPath().equals("/")) {
-			FileInputStream fs = new FileInputStream("/WebContent/static/index.html");
-			response.setContentType("text/html");
-			response.setStatus(HttpServletResponse.SC_OK);
-			IOUtils.copy(fs, out);
-			out.close();
+			OutputStreamWriter osw = new OutputStreamWriter(out);
+			osw.write("haha");
 		}
 	}
 
