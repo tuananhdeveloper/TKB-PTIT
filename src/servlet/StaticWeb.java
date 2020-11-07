@@ -38,10 +38,9 @@ public class StaticWeb extends HttpServlet {
 		// TODO Auto-generated method stub
 		OutputStream out = response.getOutputStream();
 		OutputStreamWriter osw = new OutputStreamWriter(out);
-		osw.write("haha");
+		osw.write(request.getContextPath());
 		osw.close();
 		out.close();
-		System.out.println(request.getContextPath());
 //		if(request.getContextPath().equals("/index.html") || request.getContextPath().equals("/")) {
 //			OutputStreamWriter osw = new OutputStreamWriter(out);
 //			osw.write("haha");
