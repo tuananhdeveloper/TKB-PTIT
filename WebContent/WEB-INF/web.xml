@@ -10,9 +10,5 @@
   <servlet>
     <servlet-name>GetExcelFile</servlet-name>
     <servlet-class>MyServlet</servlet-class>
-  </servlet>
-	<servlet-mapping>   
-	    <servlet-name>default</servlet-name>
-	    <url-pattern>*</url-pattern>
-	</servlet-mapping>  
+  </servlet>  
 </web-app>
