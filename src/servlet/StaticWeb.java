@@ -37,7 +37,7 @@ public class StaticWeb extends HttpServlet {
 		// TODO Auto-generated method stub
 		OutputStream out = response.getOutputStream();
 		if(request.getContextPath().equals("/index.html") || request.getContextPath().equals("/")) {
-			FileInputStream fs = new FileInputStream("/static/index.html");
+			FileInputStream fs = new FileInputStream("/WebContent/static/index.html");
 			response.setContentType("text/html");
 			response.setStatus(HttpServletResponse.SC_OK);
 			IOUtils.copy(fs, out);
