@@ -125,7 +125,7 @@ public class ICSExporter {
 	public String[] getStringsFromNodes(Elements nodes) {
 		
 		String str[] = new String[nodes.size()];
-		
+		if(nodes.size() == 0) return str;
 		for(int i = 0; i < nodes.size()-1; i++) {
 			str[i] = nodes.get(i).child(0).child(0).child(0).html();
 		}
@@ -135,7 +135,7 @@ public class ICSExporter {
 	
 	public String[] getStartDate(Elements nodes) {
 		String startDate[] = new String[nodes.size()];
-		
+		if(nodes.size() == 0) return startDate;
 		for(int i = 0; i < nodes.size()-1; i++) {
 			Element tmp = nodes.get(i).child(0).child(0).child(0);
 			startDate[i] = tmp.attr("onmouseover").split("'")[1].split("--")[0];
@@ -148,7 +148,7 @@ public class ICSExporter {
 	
 	public String[] getEndDate(Elements nodes) {
 		String endDate[] = new String[nodes.size()];
-		
+		if(nodes.size() == 0) return endDate;
 		for(int i = 0; i < nodes.size()-1; i++) {
 			Element tmp = nodes.get(i).child(0).child(0).child(0);
 			endDate[i] = tmp.attr("onmouseover").split("'")[1].split("--")[1];
